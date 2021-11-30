@@ -1,0 +1,13 @@
+<html>
+   <head>
+       <title>{{ title }}</title>
+       <link rel="icon" href="{{ static_url('images/favicon.ico') }}">
+   </head>
+   <body>
+     <ul>
+       {% for item in items %}
+         <li>{{ escape(item) }}</li>
+       {% end %}
+     </ul>
+   </body>
+ </html>
