@@ -6,7 +6,6 @@ import datetime
 
 
 class TestUserInfo(unittest.TestCase):
-
     def setUp(self):
         self.user = User()
         user_dic = dict()
@@ -39,5 +38,5 @@ class TestUserInfo(unittest.TestCase):
         print(user_list)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

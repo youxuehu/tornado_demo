@@ -4,7 +4,6 @@ from tornado_demo.sqllite3db import database
 
 
 class User(object):
-
     def __init__(self):
         self.conn = database.Connection(":memory:")
 
@@ -20,8 +19,19 @@ class User(object):
         script = """
         insert into user_info(id, name, owner, biz_date, gmt_create, gmt_update, gmt_delete, operate_create, operate_update, 
         operate_delete, is_deleted) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        """ % (user.get("id"), user.get("name"), user.get("owner"), user.get("biz_date"), user.get("gmt_create"), user.get("gmt_update"),  # noqa
-               user.get("gmt_delete"), user.get("operate_create"), user.get("operate_update"), user.get("operate_delete"), user.get("is_deleted"), )  # noqa
+        """ % (
+            user.get("id"),
+            user.get("name"),
+            user.get("owner"),
+            user.get("biz_date"),
+            user.get("gmt_create"),
+            user.get("gmt_update"),  # noqa
+            user.get("gmt_delete"),
+            user.get("operate_create"),
+            user.get("operate_update"),
+            user.get("operate_delete"),
+            user.get("is_deleted"),
+        )  # noqa
 
         print(script)
         self.conn.execute(script)

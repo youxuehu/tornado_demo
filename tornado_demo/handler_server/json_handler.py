@@ -34,7 +34,6 @@ def load_jupyter_server_extension(nb_server_app):
     settings = {"template_path": DEFAULT_TEMPLATE_PATH_LIST, "static_path": DEFAULT_STATIC_FILES_PATH}
     web_app = nb_server_app.web_app
     web_app.settings.update(settings)
-    host_pattern = '.*$'
-    route_pattern = url_path_join(web_app.settings['base_url'], '/json')
+    host_pattern = ".*$"
+    route_pattern = url_path_join(web_app.settings["base_url"], "/json")
     web_app.add_handlers(host_pattern, [(route_pattern, JsonHandler)])
-
